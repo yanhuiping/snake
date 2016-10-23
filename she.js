@@ -71,12 +71,18 @@ $(function(){
 		}
 		if(tru[xintou.x+'_'+xintou.y]){
 			clearInterval(t);
-			alert('gameover');
+			// alert('gameover');
+			$('.losebox').css({
+				display:'block'
+			})
 			return;
 		}
 		if(xintou.x<0||xintou.x>19||xintou.y<0||xintou.y>19){
 			clearInterval(t);
-			alert('gameover');
+			$('.losebox').css({
+				display:'block'
+			})
+			// alert('gameover');
 			return;
 		}
 		she.push(xintou);
@@ -103,7 +109,7 @@ $(function(){
 	start.on('click',function(){
 		start.fadeOut();
 		num=0;
-		 t=setInterval(move,500);
+		 t=setInterval(move,100);
 
 	})
 	zt.on('click',function(){
@@ -112,15 +118,26 @@ $(function(){
 	})
 
 	jixu.on('click',function(){
-		t=setInterval(move,500);
+		t=setInterval(move,100);
 
 	})
 	restart.on('click',function(){
+		// console.log(1)
 		clearInterval(t);
-		var t=setInterval(move,500);
+		var t=setInterval(move,100);
+		// $(window).readOnly;
+
 
 	})
 	$('.rule').on('click',function () {
 		$('.rulebox').slideToggle();
+	})
+	$('.restarta').on('click',function(){
+		$('.losebox').css({
+			display:'none'
+		})
+		clearInterval(t);
+		var t=setInterval(move,100);
+
 	})
 })

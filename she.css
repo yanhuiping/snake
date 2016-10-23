@@ -147,3 +147,29 @@ top:260px;
 	display:none;
 
 }
+.losebox{
+	display:none;
+	width:300px;
+	height:auto;
+	background:url('a.png') no-repeat center center;
+	background-size:300px 329px;
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	margin:auto;
+	z-index:6;
+}
+.losebox .restarta{
+
+	position:absolute;
+	left:50px;
+	top:400px;
+	width:200px;
+	height:96px;
+}
+.losebox .restarta img{
+	width:200px;
+	height:auto;
+}
